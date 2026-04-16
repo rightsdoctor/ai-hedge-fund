@@ -21,6 +21,8 @@ interface ModelProvider {
   }>;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export function CloudModels({ className }: CloudModelsProps) {
   const [providers, setProviders] = useState<ModelProvider[]>([]);
   const [loading, setLoading] = useState(false);
@@ -30,7 +32,7 @@ export function CloudModels({ className }: CloudModelsProps) {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:8000/language-models/providers');
+      const response = await fetch(API_BASE_URL + '/language-models/providers');
       if (response.ok) {
         const data = await response.json();
         setProviders(data.providers);

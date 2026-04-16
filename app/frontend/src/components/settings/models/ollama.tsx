@@ -275,7 +275,7 @@ export function OllamaSettings() {
     
     try {
       // Call the backend to cancel the download
-      const response = await fetch(`http://localhost:8000/ollama/models/download/${encodeURIComponent(modelName)}`, {
+      const response = await fetch(API_BASE_URL + `/ollama/models/download/${encodeURIComponent(modelName)}`, {
         method: 'DELETE',
       });
       
@@ -324,7 +324,7 @@ export function OllamaSettings() {
     setActionLoading(`delete-${modelName}`);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:8000/ollama/models/${encodeURIComponent(modelName)}`, {
+      const response = await fetch(API_BASE_URL + `/ollama/models/${encodeURIComponent(modelName)}`, {
         method: 'DELETE',
       });
       if (response.ok) {
