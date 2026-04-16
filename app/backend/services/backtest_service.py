@@ -29,8 +29,8 @@ class BacktestService:
         start_date: str,
         end_date: str,
         initial_capital: float,
-        model_name: str = "gpt-4.1",
-        model_provider: str = "OpenAI",
+        model_name: str = "llama-3.3-70b-versatile",
+        model_provider: str = "Groq",
         request: dict = {},
     ):
         """
