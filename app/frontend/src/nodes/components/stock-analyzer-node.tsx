@@ -46,7 +46,7 @@ export function StockAnalyzerNode({
   threeMonthsAgo.setMonth(today.getMonth() - 3);
   
   // Use persistent state hooks
-  const [tickers, setTickers] = useNodeState(id, 'tickers', 'AAPL,NVDA,TSLA');
+  const [tickers, setTickers] = useNodeState(id, 'tickers', 'TSLA');
   const [runMode, setRunMode] = useNodeState(id, 'runMode', 'single');
   const [initialCash, setInitialCash] = useNodeState(id, 'initialCash', '100000');
   const [startDate, setStartDate] = useNodeState(id, 'startDate', threeMonthsAgo.toISOString().split('T')[0]);
